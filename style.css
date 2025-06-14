@@ -1,0 +1,534 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+  }
+  
+body{
+    overflow-x: hidden;
+}
+
+/*Scroll to top Arrow Button*/
+.arrow {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9;   
+}
+.arrow a {
+    height: 39px;
+    width: 37px;
+    text-align: center;
+    background: #cccccc;
+    display: block;
+    border-radius: 3px;
+}
+.arrow a {
+    color: #1f1f1f;
+    font-size: 25px;
+    line-height: 39px;
+    cursor: pointer;
+}
+
+/*HEADER SECTION*/
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0 , 0, 0.2),rgba(0, 0 , 0, 0.3)), url(images/Background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.logo img {
+    float: left;
+    margin: -10px 70px 0 70px;
+    width: 130px;
+    z-index: 3;
+    position: absolute;
+    cursor: pointer;
+}
+nav .hamb {
+    width: 35px;
+    height: 24px;
+    right: 3%;
+    top: 60px;
+    z-index: 5;
+    background: transparent;
+    position: absolute;
+    cursor: pointer;
+    display: none;
+}
+nav .hamb span {
+    display: block ;
+    background: #417099;
+    width: 100%;
+    height: 3px;
+    transition: .3s;
+    transition-property: transform,opacity;
+}
+nav .hamb span:nth-child(2){
+    margin: 7px 0px;
+}
+/*NAVIGATION BAR*/
+ul.navbar {
+    list-style: none;
+    display: flex;
+    padding-right: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: right;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0 , 0, 0.5);
+    z-index: 2;
+}
+nav .navbar li {
+    display: flex;
+    margin: 20px 0px;
+}
+nav .navbar li a {
+    color: white;
+    padding: 8px 25px;
+    margin-left: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+nav .navbar li a:hover {
+    color: black;
+    background:  white;
+    border-radius: 8px;
+    transition: .4s;
+    transform: scale(1.1);
+}
+.container {
+    padding-top: 190px;
+}
+.container .inside {
+    position: absolute;
+    top: 37%;
+    left: 7%;
+    color: white;
+}
+.container .inside h1 {
+    margin: 15px 0px 15px;
+    font-size: 80px;
+}
+.container .inside h3 {
+    color: #d8e5f0;
+    font-size: 20px;
+    margin-bottom: -13px;
+}
+.container .inside p {
+    font-size: 25px;
+    margin-top: -13px;
+}
+span {  /*Gradient color text*/
+    background: linear-gradient(90deg, #4d87b6, #202d68);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.social a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #c5daeb;
+    cursor: pointer;
+    margin: 15px 20px 35px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.social a:hover {
+    transform: scale(1.1);
+    background: #2e628b;
+    transition: .4s;
+}
+
+/*3 Bar upper-right corner when window's width shrink to 930px */
+@media screen and (max-width: 930px) {
+    nav .hamb {
+        display: initial;
+        position: fixed;
+    }
+    .click{
+        top: 46px;
+    }
+    .click span{
+        position: absolute;
+        margin-top: 12px;
+    }
+    .click span:first-child{
+        transform: rotate(40deg);
+    }
+    .click span:nth-child(2){
+        opacity: 0;
+        margin: 0;
+    }
+    .click span:last-child{
+        transform: rotate(-40deg);
+        top: 0;  
+    }
+    nav .navbar{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 90px;
+        right: 100%;
+        width: 50%;
+        height: 55%;
+        background: black;
+        z-index: 2;
+        padding: 10% 10%;
+        transition: .3s right;
+        border-radius: 15px;
+    }
+    nav .navbar li {
+        display: block;
+        margin: 0;
+    }
+    nav .navbar li a{
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    nav .navbar.open{
+        right: 0;
+    }
+}
+
+/*ABOUT SECTION*/
+.about-wrap {
+    width: 100%;
+    padding: 100px 20px 100px 20px;
+    background: linear-gradient(#1b1b1b 10%, rgb(70, 70, 70), #222222 95%);
+}
+.my-image img{
+    width: 90%;
+}
+.about-text {
+    max-width: 650px;
+}
+.main {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-text h2 {
+    background: linear-gradient(90deg, #4d8fc5, #8d0977 70%);   /*for gradient*/
+    background-clip: text;                                          /*for gradient*/
+    -webkit-background-clip: text;                                  /*for gradient*/
+    -webkit-text-fill-color: transparent;                           /*for gradient*/
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.about-text p {
+    color: white;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+/*TIMELINE SECTION*/
+#timeline {
+    background: linear-gradient(#232323 5%, rgb(99, 98, 98), #222 65%);
+}
+.title h2 {
+    background: linear-gradient(90deg, #4d8fc5, #9b0983);       /*for gradient*/
+    background-clip: text;                                          /*for gradient*/
+    -webkit-background-clip: text;                                  /*for gradient*/
+    -webkit-text-fill-color: transparent;                           /*for gradient*/
+    font-size: 55px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    width: 1130px;
+    max-width: 50%;
+}
+.content h3 {
+    color:#417099;
+}
+.content h2 {
+    color:#0e2c46;
+}
+.content h4 {
+    color:#082946;
+}
+.content p {
+    font-weight: 500;
+}
+.timeline-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .holder {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .holder::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #5585af;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 500px) {
+    /* Place the timelime to the left */
+    .timeline-content::after {
+    left: 31px;
+    }
+    
+    /* Full-width containers */
+    .holder {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+    
+    /* Make sure that all arrows are pointing leftwards */
+    .holder::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+    left: 15px;
+    }
+    
+    /* Make all right containers behave like the left ones */
+    .right {
+    left: 0%;
+    }
+  }
+
+/*CONTACT ME SECTION*/
+.contact-me-wrapper {
+    background: linear-gradient(#232323 15%, rgb(68, 68, 68) , #161616 108%);
+    padding-bottom: 50px;
+  }
+.contact-me h1 {
+    background: linear-gradient(90deg, #4d8fc5, #850b70 );       /*for gradient*/
+    background-clip: text;                                          /*for gradient*/
+    -webkit-background-clip: text;                                  /*for gradient*/
+    -webkit-text-fill-color: transparent;                           /*for gradient*/
+    font-size: 55px;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+  
+.contact-me {
+    margin: 0 auto;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40rem;
+    max-width: 90%;
+}
+  
+.contact-me input {
+    width: 100%;
+    padding-left: 20px;
+    border: none;
+    background: #f5f5f5;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    padding: 12px 16px;
+    border-radius: 9px;
+}
+  
+textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 9px;
+    background: #f5f5f5;
+    border: none;
+    font-family: inherit;
+    resize: none;
+    margin-bottom: 2rem;
+}
+  
+.contact-me button {
+    margin: auto;
+    border: none;
+    padding: 15px;
+    color: #153458;
+    background: #fff;
+    font-size: 16px;
+    border-radius: 15px;
+    max-width: 10rem;
+    cursor: pointer;
+}
+.contact-me button:hover {
+    color: #fff;
+    background:  #153458;
+    padding: 17px;
+    transition: .4s;
+    transform: scale(3.5);
+}
+
+/*SIGNATURE SECTION*/
+  .signature {
+    background: #161616;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    padding: 20px; 
+}
+@media screen and (max-width: 930px) {
+    /*Mobile responsive*/
+    html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    .hero {
+        margin: 0 auto;
+        background: linear-gradient(rgba(0, 0 , 0, 0.3),rgba(0, 0 , 0, 0.4)), url(images/Background\ plain.png);
+    }
+    .logo img {
+        float: left;
+        margin: 5px 40px 0 40px;
+        width: 130px;
+        z-index: 3;
+        position: absolute;
+        cursor: pointer;
+    }
+    .main {
+        display:inline;
+        flex-direction: column-reverse;
+        align-items: center;  
+    }
+    .container .inside {
+        text-align: center;
+        width: 100%;
+      }
+    .container .inside h1{
+        font-size: 60px;
+    }
+    .container .inside h3 {
+        font-size: 15px;
+    }
+    .container .inside p {
+        font-size: 20px;
+    }
+    .main {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center; 
+        padding-left: 10px;
+    }
+    .my-image{
+        width: 80%;
+        text-align: center;
+    }
+    .about-text {
+        max-width: 750px;
+    }
+    .title h2 {
+      max-width: 100%;
+      font-size: 50px;
+    }
+}
